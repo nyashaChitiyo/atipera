@@ -5,10 +5,5 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
-@Data
-@ToString
-@AllArgsConstructor
-public class ExceptionResponse {
-    private String message;
-    private int status;
+public record ExceptionResponse(String message,int status) {
 }

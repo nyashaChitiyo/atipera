@@ -18,7 +18,7 @@ public class ExceptionsHandler {
     @ExceptionHandler(value = {GithubException.class})
     public ResponseEntity<Object> handleUserNotFoundException(HttpStatusCodeException e){
         var exceptionResponse = e.getResponseBodyAs(ExceptionResponse.class);
-        String message = exceptionResponse.getMessage();
+        String message = exceptionResponse.message();
         ExceptionResponse updatedExceptionResponse = new ExceptionResponse(message, e.getStatusCode().value());
         return new ResponseEntity<>(updatedExceptionResponse,e.getStatusCode());
     }

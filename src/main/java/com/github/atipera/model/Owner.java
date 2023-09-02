@@ -4,9 +4,5 @@ import lombok.Data;
 
 import java.util.List;
 
-@Data
-public class Owner {
-
-    private String login;
-
+public record Owner(String login) {
 }
